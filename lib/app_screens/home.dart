@@ -19,13 +19,23 @@ class Home extends StatelessWidget {
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.ltr,
                           style: TextStyle(
-                              fontSize: 35.0, decoration: TextDecoration.none))),
+                              fontSize: 35.0,
+                              decoration: TextDecoration.none,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white
+                          ))),
                   Expanded(
                       child: Text("from mumbai to bangalore",
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.ltr,
                           style: TextStyle(
-                              fontSize: 20.0, decoration: TextDecoration.none)))
+                              fontSize: 20.0,
+                              decoration: TextDecoration.none,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white
+                          )))
                 ])
               )
               ,
@@ -37,20 +47,44 @@ class Home extends StatelessWidget {
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.ltr,
                           style: TextStyle(
-                              fontSize: 35.0, decoration: TextDecoration.none))),
+                              fontSize: 35.0,
+                              decoration: TextDecoration.none,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white
+                          ))),
                   Expanded(
                       child: Text("from jaipur to goa",
                           textAlign: TextAlign.center,
                           textDirection: TextDirection.ltr,
                           style: TextStyle(
-                              fontSize: 20.0, decoration: TextDecoration.none)))
+                              fontSize: 20.0,
+                              decoration: TextDecoration.none,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white
+                          )))
                 ]) 
-              )
+              ),
+              FlightImageAsset()
               
             ]
           )
 
           ),
     );
+  }
+}
+
+class FlightImageAsset extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    AssetImage assetImage = new AssetImage("images/book-flight.png");
+    Image image = new Image(image: assetImage);
+    return Container(
+                    child: image,
+                    );
   }
 }
