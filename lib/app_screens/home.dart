@@ -6,7 +6,7 @@ class Home extends StatelessWidget {
     // TODO: implement build
     return Center(
       child: Container(
-        padding: EdgeInsets.only(left: 10.0,top: 20.0),
+        padding: EdgeInsets.only(left: 10.0,top: 150.0),
           color: Colors.deepPurple,
           alignment: Alignment.center,
           child: Column(
@@ -66,7 +66,8 @@ class Home extends StatelessWidget {
                           )))
                 ]) 
               ),
-              FlightImageAsset()
+              FlightImageAsset(),
+              FlightButtonAsset()
               
             ]
           )
@@ -86,5 +87,47 @@ class FlightImageAsset extends StatelessWidget
     return Container(
                     child: image,
                     );
+  }
+}
+
+class FlightButtonAsset extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+                     margin: EdgeInsets.only(top: 100.0),
+                     width: 250.0,
+                     height: 50.0,
+                     child: RaisedButton(
+                       child: Text(
+                           "Book the flight",
+                            style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20.0,
+                                          fontFamily: 'Raleway',
+                                          fontWeight: FontWeight.w600
+                                            ),
+                                   ),
+                         color: Colors.deepOrange,
+                         elevation: 6.0,
+                         onPressed: () => showText(context)
+
+                                        ),
+                     );
+  }
+
+  void showText(BuildContext context)
+  {
+    var alertDialogue = AlertDialog(
+      title: Text("Flight booked successfully"),
+      content: Text("Have a safe journey"),
+    );
+
+    showDialog(
+               context: context,
+               builder: (BuildContext context) => alertDialogue
+
+              );
   }
 }
